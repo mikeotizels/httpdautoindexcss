@@ -1,0 +1,552 @@
+/*!
+ * HTTPD AutoIndex CSS
+ * 
+ * This is a customized CSS file to be used as the Index StyleSheet for all 
+ * server-generated directory listings.
+ *
+ * @package   Mikeotizels/Server/Extra/Apache/HTTPD/AutoIndex/Assets/CSS
+ * @author    Michael Otieno <mikeotizels@gmail.com>
+ * @copyright Copyright 2020 Michael Otieno
+ * @license   The MIT License <http://opensource.org/licenses/MIT>
+ * @version   1.0.0 / Apache 2.4
+ */
+ 
+@-ms-viewport {
+    width: device-width;
+}
+
+:root {
+    background-color: #f8e8a0;
+}
+
+/**
+ * 1. Apply a natural box layout model to all elements; see <http://www.paulirish.com/2012/box-sizing-border-box-ftw/>
+ * 2. Not needed for modern webkit but still used by Blackberry Browser 7.0; see <http://caniuse.com/#search=box-sizing>
+ * 3. Still needed for Firefox 28; see <http://caniuse.com/#search=box-sizing>
+ */
+*, 
+*::before, 
+*::after {
+    -webkit-box-sizing: border-box; /* 1 */
+       -moz-box-sizing: border-box; /* 2 */
+            box-sizing: border-box; /* 3 */
+    -webkit-font-smoothing: antialiased;
+}
+
+*::focus {
+    outline: 0;
+}
+
+/**
+ * 1. Corrects the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS ~font-size: 62.5%;~.
+ */
+html {
+    font-family: sans-serif;
+    line-height: 1.15; /* 1 */
+    text-align: center;
+    -webkit-text-size-adjust: 100%; /* 2 */
+        -ms-text-size-adjust: 100%;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 2rem;
+  padding-right: 15px;
+  padding-left: 15px;
+  width: 100%;
+}
+
+html:focus { 
+    outline: 0;
+}
+
+html::after {
+    color: #666666;
+    font-family: "Segoe UI", "Verdana", "Arial", sans-serif;
+    font-size: 1rem;
+    content: "Index Style by Mikeotizels";
+}
+
+body {
+    color: #1f1f1f; /* options: #1f1f1f|#000000; */
+    background-color: #ffffff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.3rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175);
+    font-family: "Segoe UI", "Verdana", "Arial", sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;  
+    text-align: left;
+    margin: 2rem auto;
+    padding: 2rem;      
+    width: 100%;
+}
+
+/** Remove the gray background on active links in IE 10 `background-color: transparent;`. */
+a {
+    color: inherit; /* options: #007bff|#0c4da2|#cd2653; */
+    background-color: transparent;
+    text-decoration: none;  
+    -webkit-transition: all 0.25s ease-in-out;
+       -moz-transition: all 0.25s ease-in-out;
+        -ms-transition: all 0.25s ease-in-out;
+         -o-transition: all 0.25s ease-in-out;
+            transition: all 0.25s ease-in-out; 
+}
+
+/*a:link {
+}*/
+
+a:hover {
+    color: #0056b3; /* options: #0d63c9|#0056b3: */
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+a:focus {
+    color: #000000; 
+    background-color: transparent;
+    outline: 0;
+}
+
+/*a:active {
+    color: #bb3902;  
+}*/
+
+/*a:visited {
+    color: #bb3902;  
+}*/
+
+/**
+ * 1. Add the correct box sizing in Firefox `box-sizing: content-box; height: 0;`.
+ * 2. Show the overflow in Edge and IE `overflow: visible;`.
+ */
+hr {
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1); /* options: #ccc|#eee|#dcd7ca|rgba(0, 0, 0, 0.1): */
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+/*
+ * Basic Indexing 
+ */
+h1 {
+    font-size: 160%;
+    margin: 0 0 0.6em;
+    border-bottom: 1px solid ThreeDLightShadow;
+    font-weight: normal;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+/* List View */
+ul {
+    padding-left: 0; 
+}
+
+ul > li {
+    list-style-type: none;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+/* Parent directory/Up */
+ul > li:first-child {
+    /*list-style: square inside url("/share/autoindex/assets/img/up.png");*/
+    list-style: square outside url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAmlJREFUeNpsU0toU0EUPfPysx/tTxuDH9SCWhUDooIbd7oRUUTMouqi2iIoCO6lceHWhegy4EJFinWjrlQUpVm0IIoFpVDEIthm0dpikpf3ZuZ6Z94nrXhhMjM3c8895977BBHB2PznK8WPtDgyWH5q77cPH8PpdXuhpQT4ifR9u5sfJb1bmw6VivahATDrxcRZ2njfoaMv+2j7mLDn93MPiNRMvGbL18L9IpF8h9/TN+EYkMffSiOXJ5+hkD+PdqcLpICWHOHc2CC+LEyA/K+cKQMnlQHJX8wqYG3MAJy88Wa4OLDvEqAEOpJd0LxHIMdHBziowSwVlF8D6QaicK01krw/JynwcKoEwZczewroTvZirlKJs5CqQ5CG8pb57FnJUA0LYCXMX5fibd+p8LWDDemcPZbzQyjvH+Ki1TlIciElA7ghwLKV4kRZstt2sANWRjYTAGzuP2hXZFpJ/GsxgGJ0ox1aoFWsDXyyxqCs26+ydmagFN/rRjymJ1898bzGzmQE0HCZpmk5A0RFIv8Pn0WYPsiu6t/Rsj6PauVTwffTSzGAGZhUG2F06hEc9ibS7OPMNp6ErYFlKavo7MkhmTqCxZ/jwzGA9Hx82H2BZSw1NTN9Gx8ycHkajU/7M+jInsDC7DiaEmo1bNl1AMr9ASFgqVu9MCTIzoGUimXVAnnaN0PdBBDCCYbEtMk6wkpQwIG0sn0PQIUF4GsTwLSIFKNqF6DVrQq+IWVrQDxAYQC/1SsYOI4pOxKZrfifiUSbDUisif7XlpGIPufXd/uvdvZm760M0no1FZcnrzUdjw7au3vu/BVgAFLXeuTxhTXVAAAAAElFTkSuQmCC");
+    margin-bottom: 10px;
+    margin-inline-start: 20px;
+    padding: 0 0.25em;
+    padding-bottom: 10px;
+    vertical-align: middle;
+}
+
+/*ul > li > a {
+}
+
+ul > li > a:hover {
+}*/
+
+/* Directory/Folder List */
+ul > li:not(:first-child) > a[href$="/"] {
+    padding: 0 0.25em;
+    vertical-align: middle;
+}
+
+ul > li:not(:first-child) > a[href$="/"]:before {
+    /*content: url("/share/autoindex/assets/img/folder.png");*/
+    content: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAd5JREFUeNqMU79rFUEQ/vbuodFEEkzAImBpkUabFP4ldpaJhZXYm/RiZWsv/hkWFglBUyTIgyAIIfgIRjHv3r39MePM7N3LcbxAFvZ2b2bn22/mm3XMjF+HL3YW7q28YSIw8mBKoBihhhgCsoORot9d3/ywg3YowMXwNde/PzGnk2vn6PitrT+/PGeNaecg4+qNY3D43vy16A5wDDd4Aqg/ngmrjl/GoN0U5V1QquHQG3q+TPDVhVwyBffcmQGJmSVfyZk7R3SngI4JKfwDJ2+05zIg8gbiereTZRHhJ5KCMOwDFLjhoBTn2g0ghagfKeIYJDPFyibJVBtTREwq60SpYvh5++PpwatHsxSm9QRLSQpEVSd7/TYJUb49TX7gztpjjEffnoVw66+Ytovs14Yp7HaKmUXeX9rKUoMoLNW3srqI5fWn8JejrVkK0QcrkFLOgS39yoKUQe292WJ1guUHG8K2o8K00oO1BTvXoW4yasclUTgZYJY9aFNfAThX5CZRmczAV52oAPoupHhWRIUUAOoyUIlYVaAa/VbLbyiZUiyFbjQFNwiZQSGl4IDy9sO5Wrty0QLKhdZPxmgGcDo8ejn+c/6eiK9poz15Kw7Dr/vN/z6W7q++091/AQYA5mZ8GYJ9K0AAAAAASUVORK5CYII=");
+}
+
+/* File List */
+ul > li:not(:first-child) > a[href*="."] {
+    padding: 0 0.25em;
+    vertical-align: middle;
+}
+
+ul > li:not(:first-child) > a[href*="."]:before {
+    /*content: url("/share/autoindex/assets/img/file.png");*/
+    content: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAABnRSTlMAAAAAAABupgeRAAABHUlEQVR42o2RMW7DIBiF3498iHRJD5JKHurL+CRVBp+i2T16tTynF2gO0KSb5ZrBBl4HHDBuK/WXACH4eO9/CAAAbdvijzLGNE1TVZXfZuHg6XCAQESAZXbOKaXO57eiKG6ft9PrKQIkCQqFoIiQFBGlFIB5nvM8t9aOX2Nd18oDzjnPgCDpn/BH4zh2XZdlWVmWiUK4IgCBoFMUz9eP6zRN75cLgEQhcmTQIbl72O0f9865qLAAsURAAgKBJKEtgLXWvyjLuFsThCSstb8rBCaAQhDYWgIZ7myM+TUBjDHrHlZcbMYYk34cN0YSLcgS+wL0fe9TXDMbY33fR2AYBvyQ8L0Gk8MwREBrTfKe4TpTzwhArXWi8HI84h/1DfwI5mhxJamFAAAAAElFTkSuQmCC");
+}
+
+
+/* Table View */
+table {
+    border-collapse: separate; /* options: collapse|separate|initial|inherit; */
+    width: 100%;
+}
+
+/*table > tr {
+}*/
+
+table > tr:hover {
+    outline: 1px solid ThreeDLightShadow;
+    -moz-outline-radius: .3em;
+}
+
+table > tr > th {
+    text-align: start;
+    white-space: nowrap;
+}
+
+/* name 
+table > tr > th:first-child {
+    padding-inline-end: 2em;
+}*/
+
+/* size 
+table > tr > th:first-child + th {
+    padding-inline-end: 1em;
+}*/
+
+/* last modified 
+table > tr > th:last-child {
+    text-align: center;
+}*/
+
+table > tr > th:hover > a {
+    text-decoration: underline;
+}
+
+/*table > tr > th > hr {
+}*/
+
+table > tr > th > img {
+    border: 0;
+}
+
+table > tr > th > a {
+    color: inherit !important;
+}
+
+/*table > tr > th > a:hover {
+}
+
+table > tr > th > a:focus {
+}*/
+
+table > tr > td {
+    white-space: nowrap;
+}
+
+table > tr > td > img {  
+    border: 0;
+    margin-inline-end: 4px;
+    margin-inline-start: -20px;
+    max-width: 16px;
+    max-height: 16px;
+    vertical-align: middle;  
+}
+
+table > tr > td > a {
+    text-decoration: none;  
+}
+
+table > tr > td > a:hover {
+    text-decoration: underline;  
+}
+
+table > tr > td > a:focus {
+    outline: 0;
+}
+
+/*table > tr > td:first-child + td {
+    text-align: end;
+    padding-inline-end: 1em;
+}*/
+
+/* date 
+table > tr > td:first-child + td + td {
+    padding-inline-start: 1em;
+    padding-inline-end: .5em;
+}*/
+
+/* time 
+table > tr > td:first-child + td + td + td {
+    padding-inline-start: .5em;
+}*/
+
+/* let 'Size' and 'Last Modified' take only as much space as they need and 'Name' all the rest */
+table > tr > td:not(:first-child) {
+    width: 0;
+}
+
+/**
+ * Fancy Indexing
+ */
+/* Title */
+h1#indextitle {  
+    border-bottom: 1px solid #c0c0c0;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    white-space: nowrap;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+/* HTML Table */
+table#indexlist {
+    clear: both;
+    border-collapse: collapse;
+    color: #212529;
+    margin: 0 auto;
+    width: 100%;
+}
+
+table#indexlist tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: none;
+}
+
+table#indexlist tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: none;
+}
+
+/* Header row of listing */
+/*table#indexlist tr.indexhead {
+}*/
+
+table#indexlist tr.indexhead:hover {
+    outline: 0;
+    -moz-outline-radius: 0;
+}
+
+table#indexlist tr.indexhead th {
+    display: table-cell; 
+    vertical-align: top;
+    font-weight: bold;
+    text-align: start;  
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 0.3rem;
+}
+
+/* Icon column */
+table#indexlist tr.indexhead th.indexcolicon {
+    width: 0;
+}
+
+table#indexlist tr.indexhead th.indexcolicon > img {
+    width: 15px;
+    height: 15px;
+}
+
+/* File name column */
+/*table#indexlist tr.indexhead th.indexcolname {
+}*/
+
+table#indexlist tr.indexhead th.indexcolname > a {
+    color: inherit;
+}
+
+/*table#indexlist tr.indexhead th.indexcolname > a:hover {
+}*/
+
+/* Last modified column */
+/*table#indexlist tr.indexhead th.indexcollastmod {
+}*/
+
+table#indexlist tr.indexhead th.indexcollastmod > a {
+    color: inherit;  
+}
+
+/*table#indexlist tr.indexhead th.indexcollastmod > a:hover {
+}*/
+
+/* File size column */
+/*table#indexlist tr.indexhead th.indexcolsize {
+}*/
+
+table#indexlist tr.indexhead th.indexcolsize > a {
+    color: inherit;  
+}
+
+/*table#indexlist tr.indexhead th.indexcolsize > a:hover {
+}*/
+
+/* Description column */
+table#indexlist tr.indexhead th.indexcoldesc {
+    display: none;  
+}
+
+table#indexlist tr.indexhead th.indexcoldesc > a {
+    color: inherit;  
+}
+
+/*table#indexlist tr.indexhead th.indexcoldesc > a:hover {
+}*/
+
+/* Horizontal rule at the top/bottom of the table */
+/*table#indexlist tr.indexbreakrow {
+}*/
+
+/*table#indexlist tr.indexbreakrow th {
+}*/
+
+table#indexlist tr.indexbreakrow th > hr {
+    border: 1px solid transparent;
+    margin: 0.25rem 0;
+}
+
+/* Alternating even and odd rows */
+/*table#indexlist tr.even {
+}*/
+
+table#indexlist tr.even:hover {
+    outline: 1px solid ThreeDLightShadow;
+    -moz-outline-radius: 0.3em;
+}
+
+table#indexlist tr.even td {
+    padding: 0.3rem;
+}
+
+table#indexlist tr.even td.indexcolicon {
+    padding: 0 0.5em;
+    width: 15px;
+    height: 15px;
+}
+
+table#indexlist tr.even td.indexcolicon > img {  
+    vertical-align: middle;
+}
+
+/*table#indexlist tr.even td.indexcolname {
+}*/
+
+table#indexlist tr.even td.indexcolname > a {
+    word-break: break-all;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+
+/*table#indexlist tr.even td.indexcolname > a:hover {
+}*/
+
+table#indexlist tr.even td.indexcollastmod {
+    color: #6c757d;
+}
+
+table#indexlist tr.even td.indexcolsize {
+    color: #6c757d;
+}
+
+table#indexlist tr.even td.indexcoldesc {
+    display: none;
+}
+
+/*table#indexlist tr.odd {
+   
+}*/
+
+table#indexlist tr.odd td {
+    padding: 0.3rem; 
+}
+
+table#indexlist tr.odd:hover {
+    outline: 1px solid ThreeDLightShadow;
+    -moz-outline-radius: 0.3em;
+}
+
+table#indexlist tr.odd td.indexcolicon {
+    padding: 0 0.5em;
+    width: 15px;
+    height: 15px;
+}
+
+table#indexlist tr.odd td.indexcolicon > img {  
+    vertical-align: middle;
+}
+
+/*table#indexlist tr.odd td.indexcolname {
+}*/
+
+table#indexlist tr.odd td.indexcolname > a {
+    word-break: break-all;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+
+/*table#indexlist tr.odd td.indexcolname > a:hover {
+}*/
+
+table#indexlist tr.odd td.indexcollastmod {
+    color: #6c757d;
+}
+
+table#indexlist tr.odd td.indexcolsize {
+    color: #6c757d;
+}
+
+table#indexlist tr.odd td.indexcoldesc {
+    display: none;
+}
+
+@media (min-width: 576px) {
+    body {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    body {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    body {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    body {
+        max-width: 1140px;
+    }
+}
+
+/*@media (max-width: 575.98px) {
+}*/
+
+@media (max-width: 767.98px) {
+    body {
+        font-size: 0.8em;
+    }
+
+    h1,
+    h1#indextitle  {
+        font-size: 2.0em;
+        overflow-x: scroll;
+    }
+}
+
+/*@media (max-width: 991.98px) {
+}*/
+
+/*@media (max-width: 1199.98px) {
+}*/
