@@ -11,5 +11,5 @@ installation of the Apache HTTP Server software.
 
 # Branches
 
-  - [v1.0.0](https://github.com/mikeotizels/httpdautoindexcss/tree/1.0.0)
   - [v2.0.0](https://github.com/mikeotizels/httpdautoindexcss/tree/2.0.0)
+  - [v1.0.0](https://github.com/mikeotizels/httpdautoindexcss/tree/1.0.0)
