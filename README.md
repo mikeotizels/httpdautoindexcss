@@ -21,21 +21,20 @@ Please refer to the Apache HTTP Server [mod_autoindex][1] module documentation
 for more information about HTTPD AutoIndex module. 
 
 You may also need to include the "/assets/" alias for the 'assets' directory if 
-you it is not relative to the server's document root. See the [mod_alias][3]
+you it is not relative to the server's document root. See the [mod_alias][2]
 module documentation for more information.
 
 # Tuning
 
 The Index Styles in this package displays the directory listings well with the 
-the following index options included in the HTTPD [IndexOptions][2] directive: 
+the following index options included in the HTTPD `IndexOptions` directive: 
 
 ```httpd-autoindex.conf
 IndexOptions FancyIndexing HTMLTable IconWidth=15 IconHeight=15 NameWidth=*
 ```
 
   [1]: https://httpd.apache.org/docs/2.4/mod/mod_autoindex.html
-  [2]: https://httpd.apache.org/docs/2.4/mod/mod_autoindex.html#indexstylesheet
-  [3]: https://httpd.apache.org/docs/2.4/mod/mod_alias.html
+  [2]: https://httpd.apache.org/docs/2.4/mod/mod_alias.html
 
 -------------------------------------------------------------------------------
 
