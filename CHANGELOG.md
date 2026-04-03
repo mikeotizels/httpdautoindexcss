@@ -1,0 +1,21 @@
+HTTPD AutoIndex CSS - ChangeLog
+===============================
+
+## 2.1.0 - 2026-04-03
+
+- Added support for dark mode with system preference detection.
+
+## 2.0.0 - 2023-01-25
+
+- Changed document body background color from light yellow to light grey.
+- Added styles for default FancyIndexing option which uses the <pre> tag.
+- Modified the FancyIndexing HTMLTable option styles to hide the last modified
+  column by default in small screens, only shows it in medium and large screens.
+- Modified the FancyIndexing HTMLTable option styles to hide the description
+  column by default in medium and small screens, only shows it in large screens.
+- Modified the index title to truncate overflow text, adds an ellipsis (...) to
+  long titles in different screen sizes.
+
+## 1.0.0 - 2020-08-10
+
+- Initial release
